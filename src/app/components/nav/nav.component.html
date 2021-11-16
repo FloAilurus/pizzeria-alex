@@ -1,0 +1,40 @@
+<header class="mb-4">
+    <div class="px-3 py-2 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a routerLink="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            Pizzeria
+          </a>
+
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li>
+              <a routerLink="accueil" class="nav-link text-white">
+                Accueil
+              </a>
+            </li>
+            <li>
+              <a routerLink="command" class="nav-link text-white">
+                Commande
+              </a>
+            </li>
+            <li>
+              <a routerLink="contact" class="nav-link text-white">
+                Contact
+              </a>
+            </li>
+            <li *ngIf="!isConnected()">
+                <a routerLink="login" class="nav-link text-info">
+                  Login
+                </a>
+            </li>
+            <li *ngIf="isConnected()">
+                <a class="nav-link text-danger" (click)="logout()" >
+                  Logout
+                </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
